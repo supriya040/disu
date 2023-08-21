@@ -4,26 +4,26 @@ pipeline {
     stages {
         stage ('SCM checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/meets-patel/disu2.git'
+                git branch: 'main', url: 'https://github.com/supriya040/disu.git'
             }
             
         }
         
         stage ('docker image build') {
             steps {
-                sh '/usr/bin/docker image build -t meetpatel2223/disu .'
+                sh '/usr/bin/docker image build -t supriya040/disu .'
             }
         }
         
         stage ('Docker Login') {
             steps {
-                sh 'echo dckr_pat_BywiI2AmHoGCgefxffyJfSJj1NA | /usr/bin/docker login -u meetpatel2223 --password-stdin'
+                sh 'echo dckr_pat_dfAoP_83SlNhGyz2NoRX4v9B8Pc | /usr/bin/docker login -u supriya040 --password-stdin'
             }
         }
         
         stage ('docker image Push') {
             steps {
-                sh '/usr/bin/docker image push meetpatel2223/disu'
+                sh '/usr/bin/docker image push supriya040/disu'
             }
         }
         
@@ -35,7 +35,7 @@ pipeline {
         
         stage ('create docker service') {
             steps {
-                sh '/usr/bin/docker service create --name disu -p 4010:4010 meetpatel2223/disu'
+                sh '/usr/bin/docker service create --name disu -p 4010:4010 supriya040/disu'
             }
         }
         

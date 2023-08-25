@@ -35,7 +35,7 @@ pipeline {
         
         stage ('create docker service') {
             steps {
-                sh '/usr/bin/docker service create --name disu -p 4010:4010 supriya040/disu'
+                sh '/usr/bin/docker service create --name disu -p 80:4010 supriya040/disu'
             }
         }
         

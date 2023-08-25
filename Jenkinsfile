@@ -6,7 +6,7 @@ pipeline {
             steps {
                 git branch: 'main', url: 'https://github.com/supriya040/disu.git'
             }
-            
+
         }
         
         stage ('docker image build') {

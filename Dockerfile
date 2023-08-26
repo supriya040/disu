@@ -5,5 +5,5 @@ RUN pip install opencv-python-headless
 RUN pip install werkzeug
 WORKDIR /src
 COPY . .
-EXPOSE 80
+EXPOSE 4010
 CMD python app.py
